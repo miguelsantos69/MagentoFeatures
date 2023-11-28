@@ -1,0 +1,18 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Sales\Block\Adminhtml\Order\AbstractOrder;
+use Rokezzz\CheckoutTypes\ViewModel\OrderCheckoutType;
+
+/**
+ * @var AbstractOrder $block
+ * @var OrderCheckoutType $orderCheckoutType
+ */
+$orderCheckoutType = $block->getData('checkout_type_name');
+$checkoutTypeName = $orderCheckoutType->getOrderCheckoutType((int)$block->getOrder()->getId());
+
+?>
+<tr>
+    <th><?= /** @noEscape */ __('Checkout Type') ?></th>
+    <td><span id="checkout_type_name"><?= /** @noEscape */ __($checkoutTypeName) ?></span></td>
+</tr>

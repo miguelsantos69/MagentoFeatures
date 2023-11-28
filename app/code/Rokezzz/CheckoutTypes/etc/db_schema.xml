@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="rokezzz_checkout_types" engine="innodb" comment="Checkout types">
+        <column xsi:type="int" name="type_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Type Id"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="type_id"/>
+        </constraint>
+    </table>
+    <table name="rokezzz_checkout_types_sales_order" engine="innodb" comment="Sales orders">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="int" name="order_id" padding="10" unsigned="true" nullable="false" comment="Order id"/>
+        <column xsi:type="int" name="checkout_type_id" padding="10" unsigned="true" nullable="false" comment="Type Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="ROKEZZZ_CHECKOUT_TYPES_SALES_ORDER_ORDER_ID">
+            <column name="order_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="ROKEZZZ_CHECKOUT_TYPES_SALES_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID"
+                    table="rokezzz_checkout_types_sales_order" column="order_id" referenceTable="sales_order"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign"
+                    referenceId="ROKEZZZ_CHECKOUT_TYPES_SALES_ORDER_CHECKOUT_TYPE_ID_ROKEZZZ_CHECKOUT_TYPES_TYPE_ID"
+                    table="rokezzz_checkout_types_sales_order" column="checkout_type_id"
+                    referenceTable="rokezzz_checkout_types" referenceColumn="type_id" onDelete="NO ACTION"/>
+    </table>
+</schema>

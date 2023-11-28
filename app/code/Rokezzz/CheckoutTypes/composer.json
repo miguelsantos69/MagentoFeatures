@@ -1,0 +1,17 @@
+{
+  "name": "rokezzz/module-checkout-types",
+  "version": "1.0.0",
+  "description": "Add types of checkout",
+  "type": "magento2-module",
+  "require": {
+    "../../../../vendor/magento/framework": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Rokezzz\\CheckoutTypes\\": ""
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Rokezzz_CheckoutTypes::manage_checkouts"
+             title="Manage Checkout Types"
+             module="Rokezzz_CheckoutTypes"
+             sortOrder="100"
+             parent="Magento_Sales::sales_operation"
+             action="checkout_types/grid/index"
+             resource="Rokezzz_CheckoutTypes::manage_checkouts"
+        />
+    </menu>
+</config>

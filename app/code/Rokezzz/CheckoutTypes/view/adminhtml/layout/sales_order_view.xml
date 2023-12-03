@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="order_info">
+            <block class="Magento\Sales\Block\Adminhtml\Order\AbstractOrder"
+                   name="sales_order_view_checkout_type"
+                   template="Rokezzz_CheckoutTypes::order/view/checkout_type.phtml" >
+                <arguments>
+                    <argument name="checkout_type_name" xsi:type="object">Rokezzz\CheckoutTypes\ViewModel\OrderCheckoutType</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

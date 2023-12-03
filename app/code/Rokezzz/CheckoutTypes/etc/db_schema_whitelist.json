@@ -1,0 +1,24 @@
+{
+    "rokezzz_checkout_types": {
+        "column": {
+            "type_id": true,
+            "name": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "rokezzz_checkout_types_sales_order": {
+        "column": {
+            "id": true,
+            "order_id": true,
+            "checkout_type_id": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "ROKEZZZ_CHECKOUT_TYPES_SALES_ORDER_ORDER_ID": true,
+            "ROKEZZZ_CHKT_TYPES_SALES_ORDER_ORDER_ID_SALES_ORDER_ENTT_ID": true,
+            "FK_867F144793AEA250B3DCF1202284628D": true
+        }
+    }
+}
